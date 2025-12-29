@@ -1,0 +1,19 @@
+{
+  "hive": {
+    "host": "your_hive_host",
+    "port": 10000,
+    "username": "your_username",
+    "password": "your_password",
+    "database": "default",
+    "auth": "LDAP",
+    "configuration": {
+            "hive.cli.print.header": "true"
+        }
+  },
+  "allowed_origins": null,
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8008,
+    "max_rows": 3000
+  }
+}
