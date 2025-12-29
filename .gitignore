@@ -9,3 +9,4 @@ config.json
 server.log
 backup/
 .trae/
+databases.json
