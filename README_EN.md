@@ -100,23 +100,21 @@ The core tool for executing Hive SQL queries, supporting:
 ```json
 {
   "hive": {
-    "host": "10.9.62.211",          // HiveServer2 Host Address
+    "host": "your-hive-server-host", // HiveServer2 Host Address
     "port": 10000,                   // HiveServer2 Port
-    "username": "hive",              // Username
-    "password": "hive123",           // Password
+    "username": "your-username",     // Username
+    "password": "your-password",     // Password
     "database": "default",           // Default Database
     "auth": "LDAP",                  // Authentication Method (LDAP/PLAIN/KERBEROS)
     "configuration": {               // Hive Configuration Parameters
       "hive.cli.print.header": "true"
     }
   },
-  "allowed_origins": [               // CORS Allowed Origins
-    "http://localhost:3000",
-    "https://trusted.com"
-  ],
+  "allowed_origins": null,           // CORS Allowed Origins (null means allow all)
   "server": {
-    "host": "::",                    // Server Listen Address (:: means all interfaces)
-    "port": 8008                     // Server Port
+    "host": "0.0.0.0",               // Server Listen Address
+    "port": 8008,                    // Server Port
+    "max_rows": 3000                 // Max rows returned
   }
 }
 ```
