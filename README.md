@@ -1,5 +1,7 @@
 # MCP Hive Server
 
+[中文文档](README.md) | [English Documentation](README_EN.md)
+
 一个基于 Model Context Protocol (MCP) 的 Apache Hive 数据库查询服务器，提供 HTTP 接口用于执行 Hive SQL 查询。
 
 ## 项目路径变更说明
@@ -98,23 +100,21 @@
 ```json
 {
   "hive": {
-    "host": "10.9.62.211",          // HiveServer2 主机地址
+    "host": "your-hive-server-host", // HiveServer2 主机地址
     "port": 10000,                   // HiveServer2 端口
-    "username": "hive",              // 用户名
-    "password": "hive123",           // 密码
+    "username": "your-username",     // 用户名
+    "password": "your-password",     // 密码
     "database": "default",           // 默认数据库
     "auth": "LDAP",                  // 认证方式 (LDAP/PLAIN/KERBEROS)
     "configuration": {               // Hive 配置参数
       "hive.cli.print.header": "true"
     }
   },
-  "allowed_origins": [               // CORS 允许的源
-    "http://localhost:3000",
-    "https://trusted.com"
-  ],
+  "allowed_origins": null,           // CORS 允许的源 (null 表示允许所有)
   "server": {
-    "host": "::",                    // 服务器监听地址 (:: 表示所有接口)
-    "port": 8008                     // 服务器端口
+    "host": "0.0.0.0",               // 服务器监听地址
+    "port": 8008,                    // 服务器端口
+    "max_rows": 3000                 // 最大返回行数
   }
 }
 ```
